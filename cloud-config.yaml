@@ -1,0 +1,15 @@
+#cloud-config
+users:
+  - name: ubuntu
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDe0zC8LArxRBFFc2RXr37vox/3tWpwPF8RopCyxDAb+ swimmingwebdev@Yangdell
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    shell: /bin/bash
+
+packages:
+  - nginx
+  - nmap
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl start nginx
